@@ -63,3 +63,33 @@ else{
 };
 };
 };
+
+
+/* 3-guess-loop-quit.js */
+
+function guessGame() {
+let guess = 0
+let answer = Math.floor(Math.random()*100+1);
+
+
+
+while (guess != answer){
+    guess = prompt("Guess a number, 1-100! (or type q to quit");
+        if (guess == "q"){
+            alert("Quitter!")
+            break;
+        }
+        else if(guess == answer){
+            alert("Correct!")
+        }
+        else if(guess > answer){
+            alert("Too high!")
+        }
+        else if(guess < answer){
+            alert("Too low!")
+        }
+        else{
+            alert("Bad input")
+        }
+    }
+};
