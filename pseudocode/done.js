@@ -73,11 +73,10 @@ let answer = Math.floor(Math.random()*100+1);
 
 
 
-while (guess != answer){
+while (guess != answer && guess != "q"){
     guess = prompt("Guess a number, 1-100! (or type q to quit");
         if (guess == "q"){
             alert("Quitter!")
-            break;
         }
         else if(guess == answer){
             alert("Correct!")
