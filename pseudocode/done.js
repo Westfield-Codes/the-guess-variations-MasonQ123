@@ -169,3 +169,45 @@ if (again == false){
 }
 }
 }
+
+/* 5-guess-quit-again.js */
+again = true;
+
+function guessGame(){
+
+
+while (again == true) {
+    again = confirm("Play again?");
+    if (!again) {
+        alert("Thanks for playing!");
+    }
+}
+again = true;
+}
+
+/* Guess Game Program */
+function guessGame(){
+guess = 0;
+tries = 0;
+answer = Math.floor(Math.random()*100+1);
+
+while (guess != answer){
+    guess = prompt("Guess a number, 1-100!");
+    tries += 1;
+        if (guess == answer){
+            alert("Correct in " + tries + " tries!")
+        }
+        else if (guess == "q"){
+            break
+        }
+        else if (guess > answer){
+            alert("Too high!")
+        }
+        else if (guess < answer){
+            alert("Too low!")
+        }
+        else{
+            alert("Bad Input!")
+        }
+    }
+};
