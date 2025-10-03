@@ -171,28 +171,32 @@ if (again == false){
 }
 
 /* 5-guess-quit-again.js */
-again = true;
+var plays = 0;
 
-function guessGame(){
-
-
-while (again == true) {
-    again = confirm("Play again?");
-    if (!again) {
-        alert("Thanks for playing!");
+function newGame(){
+let again = true;
+    while (again == true) {
+        if (plays > 0){
+        again = confirm("Play again?");
+        }
+        if (!again) {
+            alert("Thanks for playing!");
+            break;
+        }
+        guessGame();
+        plays ++;
     }
 }
-again = true;
-}
 
-/* Guess Game Program */
+
+
 function guessGame(){
 guess = 0;
 tries = 0;
 answer = Math.floor(Math.random()*100+1);
 
 while (guess != answer){
-    guess = prompt("Guess a number, 1-100!");
+    guess = prompt("Guess a number, 1-100! (or type q to quit)");
     tries += 1;
         if (guess == answer){
             alert("Correct in " + tries + " tries!")
@@ -210,4 +214,4 @@ while (guess != answer){
             alert("Bad Input!")
         }
     }
-};
+}
